@@ -1,0 +1,18 @@
+services:
+
+    postgres:
+      image: bitnami/postgresql:latest
+      ports:
+        - "5432:5432"
+      environment:
+        POSTGRESQL_USER: postgres
+        POSTGRESQL_PASSWORD: admin
+        POSTGRESQL_DATABASE: finance-ai
+
+      volumes:
+        - finance_pg_data:/bitnami/postgresql
+
+volumes:
+  finance_pg_data:
+
+#Acessar DB psql -h localhost -U myuser -d mydatabase
